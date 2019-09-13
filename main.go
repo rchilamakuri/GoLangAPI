@@ -20,6 +20,9 @@ func handler2(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Hello Earth\n")
 }
  
+func handler3(w http.ResponseWriter, r *http.Request){
+    fmt.Fprintf(w, "Hello scientist and james cameroon\n")
+}
 func main() {
  
 	// Calls for function handlers output to match the directory /
@@ -28,6 +31,7 @@ func main() {
     // Calls for function handler2 output to match directory /earth
     http.HandleFunc("/earth", handler2)
     
+    https.HandleFunc("/sandeep", handler3)
     // Listen to port 8080 and handle requests
     http.ListenAndServe(":8080", nil)
 }
