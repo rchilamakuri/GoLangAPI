@@ -31,7 +31,7 @@ func main() {
     // Calls for function handler2 output to match directory /earth
     http.HandleFunc("/earth", handler2)
     
-    https.HandleFunc("/sandeep", handler3)
+    https.HandleFunc("/navdeep", handler3)
     // Listen to port 8080 and handle requests
     http.ListenAndServe(":8080", nil)
 }
