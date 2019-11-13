@@ -1,23 +1,18 @@
-pipeline{
-agent any
-stages
+def name;
+node
 {
-stage('Build')
-{
-steps{
-echo "Building the project...."
-}
-}
-stage('Test'){
-steps{
+ stage('checkout')
+  {
+    def address = "new york";
 
-echo "Testing the project....."
-}
-}
-stage('Deploy'){
-steps{
-echo "Deploying the project....."
-}
-}
-}
+    name = "Raghuram"
+
+    echo "hello ${name}"
+
+  }
+  stage('checkout1')
+  {
+    echo "My name is ${name} and address is ${address}"
+  }
+
 }
