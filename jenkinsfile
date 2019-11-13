@@ -7,12 +7,8 @@ node
 
     name = "Raghuram"
 
-    echo "hello ${name}"
+    echo "hello ${name} I am sure you are from ${address}"
 
   }
-  stage('checkout1')
-  {
-    echo "My name is ${name} and address is ${address}"
-  }
-
+ 
 }
