@@ -3,20 +3,21 @@ node
 {
 stage('Checkout Code')
 {
-
+   checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/rchilamakuri/GoLangAPI.git']]])
+   workspace = pwd()
 }
 stage('Code Analysis')
 {
-   build job: 'Code Analysis', parameters: [string(name: 'workspace', value: '')]
+   build job: 'Code Analysis', parameters: [string(name: 'workspace', value: workspace)]
 }
 stage('Code Complile')
 {
-   build job: 'Code Compile', parameters: [string(name: 'workspace', value: '')]
+   build job: 'Code Compile', parameters: [string(name: 'workspace', value: workspace)]
 
 }
 stage('Code Package')
 {
-   build job: 'Code package', parameters: [string(name: 'workspace', value: '')]
+   build job: 'Code package', parameters: [string(name: 'workspace', value: workspace)]
 
 }
 stage('Code Deploy')
