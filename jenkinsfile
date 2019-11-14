@@ -8,7 +8,7 @@ stage('Checkout Code')
 }
 stage('Code Analysis')
 {
-   docker build . -t firstimage
+   docker build . firstimage
    build job: 'Code Analysis', parameters: [string(name: 'workspace', value: workspace)]
 }
 stage('Code Complile')
