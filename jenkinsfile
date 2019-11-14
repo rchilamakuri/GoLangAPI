@@ -13,7 +13,7 @@ node
 
 }
 
-def returnmessage(string name)
+def returnmessage(String name)
 {
   def name1="hello ${name}. welcome to self learning"
   return name1
