@@ -1,21 +1,27 @@
-
-def name;
-node
+def workspace
+node 
 {
-  stage('checkout')
-  {
-   def address = "new york";
-   name = "Raghuram"
-   def welcomestatement = returnmessage(name)
-   echo "${welcomestatement}"
-
-}
-
-}
-
-def returnmessage(String name)
+stage('Checkout Code')
 {
-  def name1="hello ${name}. welcome to self learning"
-  return name1
-}
 
+}
+stage('Code Analysis')
+{
+   build job: 'Code Analysis', parameters: [string(name: 'workspace', value: '')]
+}
+stage('Code Complile')
+{
+   build job: 'Code Compile', parameters: [string(name: 'workspace', value: '')]
+
+}
+stage('Code Package')
+{
+   build job: 'Code package', parameters: [string(name: 'workspace', value: '')]
+
+}
+stage('Code Deploy')
+{
+
+   build 'code deploy'
+}
+}
