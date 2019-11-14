@@ -1,23 +1,22 @@
-pipeline{
-agent any
-stages
-{
-stage('Build')
-{
-steps{
-echo "Building the project...."
-}
-}
-stage('Test'){
-steps{
 
-echo "Testing the project....."
-}
-}
-stage('Deploy'){
+def name;
+node
 {
-echo "Deploying the project....."
+  stage('checkout')
+  {
+   def address = "new york";
+   name = "Raghuram"
+   def welcomestatement = returnmessage(name)
+   echo "${welcomestatement}"
+
 }
+
 }
+
+def returnmessage(string name)
+{
+  def name1="hello ${name}. welcome to self learning"
+  return name1
 }
-}
+
+
