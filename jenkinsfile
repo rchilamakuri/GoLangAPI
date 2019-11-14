@@ -1,14 +1,21 @@
+
 def name;
 node
 {
- stage('checkout')
+  stage('checkout')
   {
-    def address = "new york";
+   def address = "new york";
+   name = "Raghuram"
+   def welcomestatement = returnmessage(name)
+   echo "${welcomestatement}"
 
-    name = "Raghuram"
-
-    echo "hello ${name} I am sure you are from ${address}"
-
-  }
- 
 }
+
+}
+
+def returnmessage(string name)
+{
+  def name1="hello ${name}. welcome to self learning"
+  return name1
+}
+
